@@ -1,0 +1,56 @@
+
+
+<HTML>
+<HEAD>
+
+</HEAD>
+<BODY>
+<script> 
+
+
+//Abriendo archivo.
+var xhr = new XMLHttpRequest();
+xhr.open('GET', 'archivo.js', true);
+
+
+//si el;archibo esta cargado funcion.
+xhr.onload = function () {
+    
+
+//datos del archivo en formato txt.
+    contenido = xhr.responseText;
+
+//pasando datos a formato obj.
+    contenido=JSON.parse(contenido);
+
+
+//obteniendo datos string
+document.write(contenido.nombre);
+document.write("<br>");
+
+//obteniendo datos numericos.
+document.write(contenido.edad);
+document.write("<br>");
+
+
+//obteniendo datos de array.
+var x =new Array();
+ x=contenido.aray
+x=JSON.parse(x)
+document.write(x.length);
+document.write("<br>")
+document.write(x[4].numero)
+
+}
+
+
+//enviando variable al archivo.
+xhr.send(null);
+
+
+
+
+
+</script>
+</BODY>
+</HTML>
